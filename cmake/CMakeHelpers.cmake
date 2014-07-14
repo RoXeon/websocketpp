@@ -1,20 +1,20 @@
 
 # Print build configuration
 macro (print_used_build_config)
-    message ("\n=========== Used Build Configuration =============\n")
+    message (STATUS "\n=========== Used Build Configuration =============\n")
     message (STATUS "ENABLE_CPP11        = " ${ENABLE_CPP11})
     message (STATUS "BUILD_EXAMPLES      = " ${BUILD_EXAMPLES})
     message (STATUS "BUILD_TESTS         = " ${BUILD_TESTS})
-    message ("")
+    message (STATUS "")
     message (STATUS "WEBSOCKETPP_ROOT    = " ${WEBSOCKETPP_ROOT})
     message (STATUS "WEBSOCKETPP_BIN     = " ${WEBSOCKETPP_BIN})
     message (STATUS "WEBSOCKETPP_LIB     = " ${WEBSOCKETPP_LIB})
     message (STATUS "Install prefix      = " ${CMAKE_INSTALL_PREFIX})
-    message ("")
+    message (STATUS "")
     message (STATUS "WEBSOCKETPP_BOOST_LIBS        = ${WEBSOCKETPP_BOOST_LIBS}")
     message (STATUS "WEBSOCKETPP_PLATFORM_LIBS     = ${WEBSOCKETPP_PLATFORM_LIBS}")
     message (STATUS "WEBSOCKETPP_PLATFORM_TSL_LIBS = ${WEBSOCKETPP_PLATFORM_TSL_LIBS}")
-    message ("") 
+    message (STATUS "")
 endmacro ()
 
 # Adds the given folder_name into the source files of the current project. 
@@ -32,7 +32,6 @@ endmacro()
 # Initialize target.
 macro (init_target NAME)
     set (TARGET_NAME ${NAME})
-    message ("** " ${TARGET_NAME})
 
     # Include our own module path. This makes #include "x.h" 
     # work in project subfolders to include the main directory headers.
