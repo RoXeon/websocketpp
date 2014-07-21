@@ -36,6 +36,10 @@
     #include <netinet/in.h>
 #endif
 
+#if defined(ntohll)
+    #undef ntohll
+#endif
+
 namespace websocketpp {
 namespace lib {
 namespace net {
