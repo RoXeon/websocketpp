@@ -40,6 +40,10 @@
     #undef ntohll
 #endif
 
+#if defined(htonll)
+    #undef htonll
+#endif
+
 namespace websocketpp {
 namespace lib {
 namespace net {
